@@ -41,9 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\IClientDal.cs" />
+    <Compile Include="DataAccess\IClientLineDal.cs" />
     <Compile Include="GenericRepository\IGenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\NTier.Entities.Enum\NTier.Entities.Enum.csproj">
+      <Project>{04D5A2B6-4039-4BF1-B7B8-2958349E64DD}</Project>
+      <Name>NTier.Entities.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTier.Entities.Model\NTier.Entities.Model.csproj">
+      <Project>{9448E56B-62F0-489E-8444-610090D9C83B}</Project>
+      <Name>NTier.Entities.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

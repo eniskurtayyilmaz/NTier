@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4BAF437-7AEA-4FAC-9833-96B9703F325E}</ProjectGuid>
+    <ProjectGuid>{0DD65DCC-1CA9-4F55-8978-0C0D96EB4044}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NTier.Data.Repository</RootNamespace>
-    <AssemblyName>NTier.Data.Repository</AssemblyName>
+    <RootNamespace>NTier.Business.Interface</RootNamespace>
+    <AssemblyName>NTier.Business.Interface</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,14 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,17 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Host\EntityFramework\DataAccess\EfClientDal.cs" />
-    <Compile Include="Host\EntityFramework\DataAccess\EfClientLineDal.cs" />
-    <Compile Include="Host\EntityFramework\EfNTierContext.cs" />
-    <Compile Include="Infrastructure\EntityFramework\EfEntityRepositoryBase.cs" />
+    <Compile Include="IClientLineManager.cs" />
+    <Compile Include="IClientManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NTier.Data.Interface\NTier.Data.Interface.csproj">
-      <Project>{EFD11907-A111-44DA-B504-C6DC6542F516}</Project>
-      <Name>NTier.Data.Interface</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NTier.Entities.Enum\NTier.Entities.Enum.csproj">
       <Project>{04D5A2B6-4039-4BF1-B7B8-2958349E64DD}</Project>
       <Name>NTier.Entities.Enum</Name>
@@ -67,14 +54,10 @@
       <Project>{9448E56B-62F0-489E-8444-610090D9C83B}</Project>
       <Name>NTier.Entities.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Host\Dapper\" />
-    <Folder Include="Infrastructure\Dapper\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\NTier.Entities.ViewModel.Operation\NTier.Entities.ViewModel.Operation.csproj">
+      <Project>{A57D3E24-3267-453C-AD54-4426F70C13F8}</Project>
+      <Name>NTier.Entities.ViewModel.Operation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

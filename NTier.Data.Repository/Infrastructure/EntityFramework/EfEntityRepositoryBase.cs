@@ -60,7 +60,7 @@ namespace NTier.Data.Repository.Infrastructure.EntityFramework
       }
     }
 
-    public TEntity GeyById(object id)
+    public TEntity GetById(object id)
     {
       return _dbSet.Find(id);
     }

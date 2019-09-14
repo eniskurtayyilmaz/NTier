@@ -13,7 +13,7 @@ namespace NTier.Data.Interface.GenericRepository
     void Update(TEntity entityToUpdate);
     void Delete(object id);
     void Delete(TEntity entityToDelete);
-    TEntity GeyById(object id);
+    TEntity GetById(object id);
     IEnumerable<TEntity> Get(
       Expression<Func<TEntity, bool>> filter = null,
       Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
