@@ -8,7 +8,7 @@ namespace NTier.Entities.Infrastructure
 {
     public class BaseModel
     {
-      public DateTime CreateDateTime { get; set; }
-      public DateTime UpdatedDateTime { get; set; }
+      public Nullable<DateTime> CreatedDateTime { get; set; }
+      public Nullable<DateTime> UpdatedDateTime { get; set; }
     }
 }

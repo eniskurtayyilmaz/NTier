@@ -45,6 +45,7 @@
     <Compile Include="DataAccess\IClientLineDal.cs" />
     <Compile Include="GenericRepository\IGenericRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NTier.Entities.Enum\NTier.Entities.Enum.csproj">

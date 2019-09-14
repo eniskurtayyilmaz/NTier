@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4BAF437-7AEA-4FAC-9833-96B9703F325E}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NTier.Data.Repository</RootNamespace>
-    <AssemblyName>NTier.Data.Repository</AssemblyName>
+    <ProjectGuid>{92CAFB82-F6A5-4A54-96AE-9E11F189AFCA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NTier.Presentation.Console</RootNamespace>
+    <AssemblyName>NTier.Presentation.Console</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,7 +41,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,34 +49,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Host\EntityFramework\DataAccess\EfClientDal.cs" />
-    <Compile Include="Host\EntityFramework\DataAccess\EfClientLineDal.cs" />
-    <Compile Include="Host\EntityFramework\EfNTierContext.cs" />
-    <Compile Include="Infrastructure\EntityFramework\EfEntityRepositoryBase.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NTier.Business.Host\NTier.Business.Host.csproj">
+      <Project>{34772361-5C06-4466-9F2D-E06BFF15CFDC}</Project>
+      <Name>NTier.Business.Host</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTier.Business.Interface\NTier.Business.Interface.csproj">
+      <Project>{0DD65DCC-1CA9-4F55-8978-0C0D96EB4044}</Project>
+      <Name>NTier.Business.Interface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NTier.Data.Interface\NTier.Data.Interface.csproj">
       <Project>{EFD11907-A111-44DA-B504-C6DC6542F516}</Project>
       <Name>NTier.Data.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NTier.Entities.Enum\NTier.Entities.Enum.csproj">
-      <Project>{04D5A2B6-4039-4BF1-B7B8-2958349E64DD}</Project>
-      <Name>NTier.Entities.Enum</Name>
+    <ProjectReference Include="..\NTier.Data.Repository\NTier.Data.Repository.csproj">
+      <Project>{F4BAF437-7AEA-4FAC-9833-96B9703F325E}</Project>
+      <Name>NTier.Data.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\NTier.Entities.Model\NTier.Entities.Model.csproj">
       <Project>{9448E56B-62F0-489E-8444-610090D9C83B}</Project>
       <Name>NTier.Entities.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Host\Dapper\" />
-    <Folder Include="Infrastructure\Dapper\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\NTier.Entities.ViewModel.Operation\NTier.Entities.ViewModel.Operation.csproj">
+      <Project>{A57D3E24-3267-453C-AD54-4426F70C13F8}</Project>
+      <Name>NTier.Entities.ViewModel.Operation</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

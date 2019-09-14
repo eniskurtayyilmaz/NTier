@@ -17,7 +17,7 @@ namespace NTier.Data.Repository.Host.EntityFramework
 
     public EfNTierContext(string nameOrConnectionString) : base(nameOrConnectionString)
     {
-
+      Database.SetInitializer<EfNTierContext>(null);
     }
 
     public virtual DbSet<Client> Clients { get; set; }

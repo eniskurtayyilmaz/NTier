@@ -31,7 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.4.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,14 +57,25 @@
       <Project>{EFD11907-A111-44DA-B504-C6DC6542F516}</Project>
       <Name>NTier.Data.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NTier.Entities.Infrastructure\NTier.Entities.Infrastructure.csproj">
+      <Project>{5FF90BBE-A2F4-4109-BC53-E0F3F62BB2A2}</Project>
+      <Name>NTier.Entities.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NTier.Entities.Model\NTier.Entities.Model.csproj">
       <Project>{9448E56B-62F0-489E-8444-610090D9C83B}</Project>
       <Name>NTier.Entities.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTier.Entities.Validation\NTier.Entities.Validation.csproj">
+      <Project>{8FB306D1-77CD-4694-857A-1CED43E1CACD}</Project>
+      <Name>NTier.Entities.Validation</Name>
     </ProjectReference>
     <ProjectReference Include="..\NTier.Entities.ViewModel.Operation\NTier.Entities.ViewModel.Operation.csproj">
       <Project>{A57D3E24-3267-453C-AD54-4426F70C13F8}</Project>
       <Name>NTier.Entities.ViewModel.Operation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
